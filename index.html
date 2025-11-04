@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
 <meta charset="utf-8">
-<title>Subscribe to Caspian Fixtures</title>
+<title>Subscribe to team Caspian Fixtures</title>
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <style>
   :root{--bg:#0f172a;--card:#111827;--text:#e5e7eb;--muted:#94a3b8;--accent:#22c55e;--accent2:#3b82f6}
@@ -34,20 +34,29 @@
 
 <script>
   // === CONFIG ===
-  const USERNAME = "vahidrsj";                  // GitHub username
-  const REPO = "Caspian-25-26";                 // repo name
-  const FILE = "Caspian1_VCGeldrop_Poule5_2025-26.ics"; // exact .ics filename
+  // === CONFIG: Google Drive ===
+// Replace with your own Drive FILE ID
+const DRIVE_FILE_ID = "1kGxv2OE0ncj1jQF4K2B8NsZ0hHGo2nHo";
 
-  // Webcal (best for Apple/macOS/Outlook)
-  const pagesPath = `/${REPO}/${FILE}`;
-  const webcalUrl = `webcal://${USERNAME}.github.io${pagesPath}`;
+// Direct download URL from Google Drive
+const driveHttps = `https://drive.google.com/uc?export=download&id=${DRIVE_FILE_ID}`;
 
-  // Google Calendar prefers RAW (plain text)
-  const rawUrl = `https://raw.githubusercontent.com/${USERNAME}/${REPO}/main/${FILE}`;
-  const gcalUrl = `https://calendar.google.com/calendar/u/0/r?cid=${encodeURIComponent(rawUrl)}`;
+// Apple/macOS/Outlook usually prefer webcal:// scheme.
+// Many clients also accept https:// for import; but for subscription we try webcal first.
+const webcalUrl = `webcal://drive.google.com/uc?export=download&id=${DRIVE_FILE_ID}`;
 
-  document.getElementById('btnWebcal').href = webcalUrl;
-  document.getElementById('btnGCal').href = gcalUrl;
+// Google Calendar add-by-URL (cid=) using the HTTPS direct link
+const gcalUrl = `https://calendar.google.com/calendar/u/0/r?cid=${encodeURIComponent(driveHttps)}`;
+
+// Wire buttons
+const btnWebcal = document.getElementById('btnWebcal');
+btnWebcal.href = webcalUrl;
+btnWebcal.addEventListener('click', () => setTimeout(() => {
+  // Fallback: if webcal is blocked by the environment, open https to let Safari/Chrome handle it
+  window.open(driveHttps, '_blank');
+}, 600));
+
+document.getElementById('btnGCal').href = gcalUrl;
 </script>
 </body>
 </html>
