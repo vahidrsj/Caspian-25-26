@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
 <meta charset="utf-8">
-<title>Subscribe to Tractor Fixtures</title>
+<title>Subscribe to Caspian Fixtures</title>
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <style>
   :root{--bg:#0f172a;--card:#111827;--text:#e5e7eb;--muted:#9ca3af;--accent:#22c55e;--accent2:#3b82f6;}
@@ -46,10 +46,36 @@
           ➕ Subscribe (Apple / Outlook)
         </a>
 
-        <!-- Google Calendar: open Add-by-URL + copy URL to clipboard -->
-        <button class="btn btn-gcal" id="btnGCal">
-          🗓️ Add in Google Calendar
-        </button>
+<!-- Google Calendar: one-click-ish via cid= -->
+<a class="btn btn-gcal" id="btnGCal" href="#" target="_blank" rel="noopener">
+  🗓️ Add in Google Calendar
+</a>
+
+<script>
+  const USERNAME = "vahidrsj";
+  const PATH = "/Caspian-25-26/Caspian1_VCGeldrop_Poule5_2025-26.ics";
+
+  const httpsUrl = `https://${USERNAME}.github.io${PATH}`;
+  const webcalUrl = `webcal://${USERNAME}.github.io${PATH}`;
+
+  document.getElementById('httpsUrl').textContent = httpsUrl;
+  document.getElementById('webcalUrl').textContent = webcalUrl;
+
+  document.getElementById('btnWebcal').href = webcalUrl;
+
+  const gcalAddUrl = "https://calendar.google.com/calendar/u/0/r?cid=" + encodeURIComponent(httpsUrl);
+  const btnGCal = document.getElementById('btnGCal');
+  btnGCal.href = gcalAddUrl;
+
+  document.getElementById('btnCopy').addEventListener('click', async () => {
+    try {
+      await navigator.clipboard.writeText(httpsUrl);
+      alert("Feed URL copied:\n" + httpsUrl + "\nPaste it into your calendar app if needed.");
+    } catch (e) {
+      prompt("Copy the feed URL manually:", httpsUrl);
+    }
+  });
+</script>
 
         <!-- Copy link -->
         <button class="btn btn-copy" id="btnCopy">
@@ -60,11 +86,6 @@
       <p class="small">Note: Google Calendar doesn’t support one-click subscription links for feeds. This button opens the “Add by URL” page and copies the feed URL. Just paste (<span class="mono">Ctrl/⌘+V</span>) and press <em>Add calendar</em>.</p>
 
       <hr style="border:0;border-top:1px solid rgba(255,255,255,.12); margin:20px 0">
-
-      <p class="small">
-        Make sure the <span class="mono">Caspian1_VCGeldrop_Poule5_2025-26.ics</span> file is updated in this repository.
-        All subscribers will receive updates automatically. If you rename the file or path, update the URLs above.
-      </p>
     </div>
   </div>
 
@@ -99,3 +120,4 @@
 </script>
 </body>
 </html>
+
