@@ -7,8 +7,8 @@
 <style>
   :root{--bg:#0f172a;--card:#111827;--text:#e5e7eb;--muted:#9ca3af;--accent:#22c55e;--accent2:#3b82f6;}
   *{box-sizing:border-box} body{margin:0; font-family:system-ui,-apple-system,Segoe UI,Roboto,Ubuntu,Inter,sans-serif; background:linear-gradient(135deg,#0b1020,#111827);} 
-  .wrap{max-width:820px;margin:0 auto;padding:32px}
-  .card{background:rgba(17,24,39,.7); border:1px solid rgba(255,255,255,.06); backdrop-filter:blur(6px); color:var(--text); border-radius:18px; padding:28px; box-shadow:0 10px 30px rgba(0,0,0,.35)}
+  .wrap{max-width:880px;margin:0 auto;padding:32px}
+  .card{background:rgba(17,24,39,.72); border:1px solid rgba(255,255,255,.08); backdrop-filter:blur(6px); color:var(--text); border-radius:18px; padding:28px; box-shadow:0 10px 30px rgba(0,0,0,.35)}
   h1{margin:0 0 6px; font-size:28px; letter-spacing:.2px}
   p{color:var(--muted); line-height:1.6}
   code, .mono{font-family:ui-monospace,SFMono-Regular,Menlo,Monaco,Consolas,monospace}
@@ -27,66 +27,87 @@
   <div class="wrap">
     <div class="card">
       <h1>Subscribe to Caspian Fixtures (2025–26)</h1>
-      <p>Live iCalendar feed for team Caspian in the VC Geldrop 2025–2026 league.</p>
+      <p>Live iCalendar feed for <strong>Caspian</strong> in VC Geldrop 2025–26. Share this page with friends to subscribe.</p>
 
       <div class="grid">
         <div class="box">
           <div class="small">HTTPS (direct):</div>
-          <div class="mono" id="httpsUrl"></div>
+          <div class="mono" id="httpsPages"></div>
         </div>
         <div class="box">
           <div class="small">WEBCAL (one‑click for iOS/macOS/Outlook):</div>
-          <div class="mono" id="webcalUrl"></div>
+          <div class="mono" id="webcalPages"></div>
+        </div>
+        <div class="box">
+          <div class="small">RAW (GitHub raw, stable for Google):</div>
+          <div class="mono" id="httpsRaw"></div>
+        </div>
+        <div class="box">
+          <div class="small">CDN (jsDelivr, optional):</div>
+          <div class="mono" id="httpsCdn"></div>
         </div>
       </div>
 
       <div class="row" style="margin-top:18px">
-        <!-- One‑click for Apple/Outlook/etc via webcal -->
         <a class="btn btn-sub" id="btnWebcal" href="#">
           ➕ Subscribe (Apple / Outlook)
         </a>
-
-        <!-- Google Calendar: open Add dialog with cid= -->
         <a class="btn btn-gcal" id="btnGCal" href="#" target="_blank" rel="noopener">
           🗓️ Add in Google Calendar
         </a>
-
-        <!-- Copy link -->
         <button class="btn btn-copy" id="btnCopy">
           📋 Copy feed URL
         </button>
       </div>
 
-      <p class="small">Note: Google Calendar doesn’t support pure one‑click subscribe from arbitrary pages. This button opens the Add dialog and pre‑fills the URL. If it doesn’t open, make sure pop‑ups aren’t blocked.</p>
+      <p class="small">Tip: Google Calendar can be picky about hosts. If the Pages link doesn’t add, this button uses the <em>RAW</em> file URL with <code>cid=</code>, which Google accepts reliably.</p>
 
       <hr style="border:0;border-top:1px solid rgba(255,255,255,.12); margin:20px 0">
+      <details>
+        <summary class="small">Troubleshooting</summary>
+        <ul class="small">
+          <li>Open the URL in an incognito tab. It must show plain text starting with <code>BEGIN:VCALENDAR</code>.</li>
+          <li>Keep the repo <strong>public</strong>. File name here: <code>Caspian1_VCGeldrop_Poule5_2025-26.ics</code>.</li>
+          <li>When you update the file, keep the same path to auto‑update all subscribers.</li>
+        </ul>
+      </details>
     </div>
   </div>
 
 <script>
-  // === CONFIG ===
-  // Set your GitHub username and the path to the .ics file in this repo
-  const USERNAME = "vahidrsj"; // ← change if needed
-  const PATH = "/Caspian-25-26/Caspian1_VCGeldrop_Poule5_2025-26.ics"; // ← change if your file name/path differs
+  // ==== CONFIG (your actual repo/paths) ====
+  const USERNAME = "vahidrsj"; 
+  const REPO = "Caspian-25-26";
+  const FILE = "Caspian1_VCGeldrop_Poule5_2025-26.ics"; // exact filename
+  const PAGES_PATH = `/${REPO}/${FILE}`; // served by GitHub Pages
 
-  const httpsUrl = `https://${USERNAME}.github.io${PATH}`;
-  const webcalUrl = `webcal://${USERNAME}.github.io${PATH}`;
-  const gcalAddUrl = `https://calendar.google.com/calendar/u/0/r?cid=${encodeURIComponent(httpsUrl)}`;
+  // Pages (good for webcal on Apple/Outlook)
+  const httpsPages = `https://${USERNAME}.github.io${PAGES_PATH}`;
+  const webcalPages = `webcal://${USERNAME}.github.io${PAGES_PATH}`;
+
+  // RAW (best for Google Calendar add-by-URL)
+  const httpsRaw = `https://raw.githubusercontent.com/${USERNAME}/${REPO}/main/${FILE}`;
+
+  // jsDelivr CDN (optional alternate)
+  const httpsCdn = `https://cdn.jsdelivr.net/gh/${USERNAME}/${REPO}@main/${FILE}`;
 
   // Fill text blocks
-  document.getElementById('httpsUrl').textContent = httpsUrl;
-  document.getElementById('webcalUrl').textContent = webcalUrl;
+  document.getElementById('httpsPages').textContent = httpsPages;
+  document.getElementById('webcalPages').textContent = webcalPages;
+  document.getElementById('httpsRaw').textContent = httpsRaw;
+  document.getElementById('httpsCdn').textContent = httpsCdn;
 
-  // Wire up buttons
-  document.getElementById('btnWebcal').href = webcalUrl;
+  // Wire buttons
+  document.getElementById('btnWebcal').href = webcalPages; // Apple/Outlook one‑click
+  const gcalAddUrl = "https://calendar.google.com/calendar/u/0/r?cid=" + encodeURIComponent(httpsRaw);
   document.getElementById('btnGCal').href = gcalAddUrl;
 
   document.getElementById('btnCopy').addEventListener('click', async () => {
     try {
-      await navigator.clipboard.writeText(httpsUrl);
-      alert("Feed URL copied to clipboard:\n" + httpsUrl + "\n\nPaste it into your calendar app if needed.");
+      await navigator.clipboard.writeText(httpsPages);
+      alert("Feed URL copied to clipboard:\n" + httpsPages + "\n\nUse webcal for Apple/Outlook, RAW for Google.");
     } catch (e) {
-      prompt("Copy the feed URL manually:", httpsUrl);
+      prompt("Copy the feed URL manually:", httpsPages);
     }
   });
 </script>
