@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
 <meta charset="utf-8">
-<title>Subscribe to team Caspian Fixtures</title>
+<title>Subscribe to Caspian Fixtures</title>
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <style>
   :root{--bg:#0f172a;--card:#111827;--text:#e5e7eb;--muted:#94a3b8;--accent:#22c55e;--accent2:#3b82f6}
@@ -24,39 +24,24 @@
       <h1>Caspian Fixtures (2025–26)</h1>
       <p>Tap a button to subscribe.</p>
       <div class="row">
-        <!-- Apple / macOS / Outlook: one‑click via webcal -->
-        <a class="btn btn-sub" id="btnWebcal" href="#">➕ Subscribe (Apple / Outlook)</a>
-        <!-- Google Calendar: add dialog with cid=RAW URL -->
+        <a class="btn btn-sub" id="btnApple" href="#">➕ Subscribe (Apple / Outlook)</a>
         <a class="btn btn-gcal" id="btnGCal" href="#" target="_blank" rel="noopener">🗓️ Add in Google Calendar</a>
       </div>
     </div>
   </div>
 
 <script>
-  // === CONFIG ===
-  // === CONFIG: Google Drive ===
-// Replace with your own Drive FILE ID
-const DRIVE_FILE_ID = "1kGxv2OE0ncj1jQF4K2B8NsZ0hHGo2nHo";
+  // ===== CONFIG =====
+  // 1) Put your deployed Apps Script URL here (the one ending with /exec)
+  const SCRIPT_URL = "https://script.google.com/macros/s/AKfycbz1OIZBf3s3mXA-oP4R3r5MSm4-wsPeSx1G1YP4FeIfeKmoJL3RsCkJ6XPbsPO9dfyg/exec";
 
-// Direct download URL from Google Drive
-const driveHttps = `https://drive.google.com/uc?export=download&id=${DRIVE_FILE_ID}`;
+  const appleUrl = SCRIPT_URL;
 
-// Apple/macOS/Outlook usually prefer webcal:// scheme.
-// Many clients also accept https:// for import; but for subscription we try webcal first.
-const webcalUrl = `webcal://drive.google.com/uc?export=download&id=${DRIVE_FILE_ID}`;
+  // Google Calendar: use cid= with the script URL
+  const gcalUrl = "https://calendar.google.com/calendar/u/0/r?cid=" + encodeURIComponent(SCRIPT_URL);
 
-// Google Calendar add-by-URL (cid=) using the HTTPS direct link
-const gcalUrl = `https://calendar.google.com/calendar/u/0/r?cid=${encodeURIComponent(driveHttps)}`;
-
-// Wire buttons
-const btnWebcal = document.getElementById('btnWebcal');
-btnWebcal.href = webcalUrl;
-btnWebcal.addEventListener('click', () => setTimeout(() => {
-  // Fallback: if webcal is blocked by the environment, open https to let Safari/Chrome handle it
-  window.open(driveHttps, '_blank');
-}, 600));
-
-document.getElementById('btnGCal').href = gcalUrl;
+  document.getElementById('btnApple').href = appleUrl;
+  document.getElementById('btnGCal').href = gcalUrl;
 </script>
 </body>
 </html>
