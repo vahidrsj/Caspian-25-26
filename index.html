@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
 <meta charset="utf-8">
-<title>Subscribe to Caspian Fixtures</title>
+<title>Subscribe to team Caspian Fixtures</title>
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <style>
   :root{--bg:#0f172a;--card:#111827;--text:#e5e7eb;--muted:#94a3b8;--accent:#22c55e;--accent2:#3b82f6}
@@ -13,7 +13,8 @@
   h1{margin:0 0 4px; font-size:26px}
   p{margin:6px 0 22px; color:var(--muted)}
   .row{display:flex; gap:12px; flex-wrap:wrap; justify-content:center}
-  .btn{appearance:none; cursor:pointer; border:0; border-radius:12px; padding:14px 18px; font-weight:700; color:white; text-decoration:none; display:inline-flex; align-items:center; gap:10px}
+  .btn{appearance:none; cursor:pointer; border:0; border-radius:12px; padding:14px 18px; font-weight:700; color:white; text-decoration:none; display:inline-flex; align-items:center; gap:10px; transition:transform .2s}
+  .btn:hover{transform:translateY(-2px)}
   .btn-sub{background:var(--accent)}
   .btn-gcal{background:var(--accent2)}
 </style>
@@ -24,24 +25,18 @@
       <h1>Caspian Fixtures (2025–26)</h1>
       <p>Tap a button to subscribe.</p>
       <div class="row">
-        <a class="btn btn-sub" id="btnApple" href="#">➕ Subscribe (Apple / Outlook)</a>
-        <a class="btn btn-gcal" id="btnGCal" href="#" target="_blank" rel="noopener">🗓️ Add in Google Calendar</a>
+        <a class="btn btn-sub" id="btnApple" href="#" target="_blank">➕ Subscribe (Apple / Outlook)</a>
+        <a class="btn btn-gcal" id="btnGCal" href="#" target="_blank" rel="noopener">🗓️ Add to Google Calendar</a>
       </div>
     </div>
   </div>
 
 <script>
-  // ===== CONFIG =====
-  // 1) Put your deployed Apps Script URL here (the one ending with /exec)
   const SCRIPT_URL = "https://script.google.com/macros/s/AKfycbz1OIZBf3s3mXA-oP4R3r5MSm4-wsPeSx1G1YP4FeIfeKmoJL3RsCkJ6XPbsPO9dfyg/exec";
+  const CALENDAR_ID = "3pjuh8el9v0b4o8rrp1vv5gnoeoi8nf7@import.calendar.google.com";
 
-  const appleUrl = SCRIPT_URL;
-
-  // Google Calendar: use cid= with the script URL
-  const gcalUrl = "https://calendar.google.com/calendar/u/0/r?cid=" + encodeURIComponent(SCRIPT_URL);
-
-  document.getElementById('btnApple').href = appleUrl;
-  document.getElementById('btnGCal').href = gcalUrl;
+  document.getElementById('btnApple').href = SCRIPT_URL;
+  document.getElementById('btnGCal').href = `https://calendar.google.com/calendar/render?cid=${encodeURIComponent(CALENDAR_ID)}`;
 </script>
 </body>
 </html>
