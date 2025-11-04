@@ -1,0 +1,134 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//Caspian1 Schedule//VC Geldrop Poule 5//EN
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+X-WR-CALNAME:VC Geldrop – Caspian 1 (Pool 5)
+X-WR-TIMEZONE:Europe/Amsterdam
+BEGIN:VEVENT
+UID:23f90d5e-228d-4193-889c-0c65f19fcd9c@vcgeldrop-caspian1
+DTSTAMP:20251022T100432Z
+DTSTART;TZID=Europe/Amsterdam:20251106T210000
+DTEND;TZID=Europe/Amsterdam:20251106T230000
+SUMMARY:[Away] ABC Volleybal 5 vs Caspian 1
+LOCATION:Frits Philips Sporthal\, Avignonlaan 1\, Eindhoven
+DESCRIPTION:Match: ABC Volleybal 5 vs Caspian 1\nRole: Away\nReferee: Simorgh 1\nLeague: VC Geldrop Men Recreational – Pool 5 (2025/2026)\nNote: Times are local (Europe/Amsterdam).\nSource: PDF schedule provided by the club.
+END:VEVENT
+BEGIN:VEVENT
+UID:12ecdae1-9f84-4191-a4c6-d70fb2a20085@vcgeldrop-caspian1
+DTSTAMP:20251022T100432Z
+DTSTART;TZID=Europe/Amsterdam:20251112T213000
+DTEND;TZID=Europe/Amsterdam:20251112T233000
+SUMMARY:[Home] Caspian 1 vs Alborz 1
+LOCATION:Sporthal Naestenbest\, Pr. Beatrixlaan 27\, Best
+DESCRIPTION:Match: Caspian 1 vs Alborz 1\nRole: Home\nReferee: ABC Volleybal 6\nLeague: VC Geldrop Men Recreational – Pool 5 (2025/2026)\nNote: Times are local (Europe/Amsterdam).\nSource: PDF schedule provided by the club.
+END:VEVENT
+BEGIN:VEVENT
+UID:ea37c12b-31b5-4d96-a7e0-46061d742e38@vcgeldrop-caspian1
+DTSTAMP:20251022T100432Z
+DTSTART;TZID=Europe/Amsterdam:20251119T213000
+DTEND;TZID=Europe/Amsterdam:20251119T233000
+SUMMARY:[Home] Caspian 1 vs ABC Volleybal 6
+LOCATION:Sporthal Naestenbest\, Pr. Beatrixlaan 27\, Best
+DESCRIPTION:Match: Caspian 1 vs ABC Volleybal 6\nRole: Home\nReferee: PBF Volleybal 2\nLeague: VC Geldrop Men Recreational – Pool 5 (2025/2026)\nNote: Times are local (Europe/Amsterdam).\nSource: PDF schedule provided by the club.
+END:VEVENT
+BEGIN:VEVENT
+UID:619b18ea-05ee-4774-b5c0-895d1084e7f7@vcgeldrop-caspian1
+DTSTAMP:20251022T100432Z
+DTSTART;TZID=Europe/Amsterdam:20251125T210000
+DTEND;TZID=Europe/Amsterdam:20251125T230000
+SUMMARY:[Away] PBF Volleybal 2 vs Caspian 1
+LOCATION:Sporthal Tivoli\, Geert Grootestraat 72\, Eindhoven
+DESCRIPTION:Match: PBF Volleybal 2 vs Caspian 1\nRole: Away\nReferee: ABC Volleybal 5\nLeague: VC Geldrop Men Recreational – Pool 5 (2025/2026)\nNote: Times are local (Europe/Amsterdam).\nSource: PDF schedule provided by the club.
+END:VEVENT
+BEGIN:VEVENT
+UID:e027ca50-dd28-4bfa-8342-559c743ac1b1@vcgeldrop-caspian1
+DTSTAMP:20251022T100432Z
+DTSTART;TZID=Europe/Amsterdam:20251203T213000
+DTEND;TZID=Europe/Amsterdam:20251203T233000
+SUMMARY:[Referee] Alborz 1 vs ABC Volleybal 5
+LOCATION:Sporthal Naestenbest\, Pr. Beatrixlaan 27\, Best
+DESCRIPTION:Match: Alborz 1 vs ABC Volleybal 5\nRole: Referee\nReferee: Caspian 1\nLeague: VC Geldrop Men Recreational – Pool 5 (2025/2026)\nNote: Times are local (Europe/Amsterdam).\nSource: PDF schedule provided by the club.
+END:VEVENT
+BEGIN:VEVENT
+UID:411aa6e8-ac5d-409b-961a-799b3117ec31@vcgeldrop-caspian1
+DTSTAMP:20251022T100432Z
+DTSTART;TZID=Europe/Amsterdam:20251210T213000
+DTEND;TZID=Europe/Amsterdam:20251210T233000
+SUMMARY:[Home] Caspian 1 vs Simorgh 1
+LOCATION:Sporthal Naestenbest\, Pr. Beatrixlaan 27\, Best
+DESCRIPTION:Match: Caspian 1 vs Simorgh 1\nRole: Home\nReferee: ABC Volleybal 5\nLeague: VC Geldrop Men Recreational – Pool 5 (2025/2026)\nNote: Times are local (Europe/Amsterdam).\nSource: PDF schedule provided by the club.
+END:VEVENT
+BEGIN:VEVENT
+UID:e03b81ed-d518-40f7-bac6-eb307ecc4053@vcgeldrop-caspian1
+DTSTAMP:20251022T100432Z
+DTSTART;TZID=Europe/Amsterdam:20251211T210000
+DTEND;TZID=Europe/Amsterdam:20251211T230000
+SUMMARY:[Referee] ABC Volleybal 6 vs Alborz 1
+LOCATION:Frits Philips Sporthal\, Avignonlaan 1\, Eindhoven
+DESCRIPTION:Match: ABC Volleybal 6 vs Alborz 1\nRole: Referee\nReferee: Caspian 1\nLeague: VC Geldrop Men Recreational – Pool 5 (2025/2026)\nNote: Times are local (Europe/Amsterdam).\nSource: PDF schedule provided by the club.
+END:VEVENT
+BEGIN:VEVENT
+UID:271250f5-71e1-471d-bbf3-8e71f2930d4d@vcgeldrop-caspian1
+DTSTAMP:20251022T100432Z
+DTSTART;TZID=Europe/Amsterdam:20260107T213000
+DTEND;TZID=Europe/Amsterdam:20260107T233000
+SUMMARY:[Away] Alborz 1 vs Caspian 1
+LOCATION:Sporthal Naestenbest\, Pr. Beatrixlaan 27\, Best
+DESCRIPTION:Match: Alborz 1 vs Caspian 1\nRole: Away\nReferee: ABC Volleybal 5\nLeague: VC Geldrop Men Recreational – Pool 5 (2025/2026)\nNote: Times are local (Europe/Amsterdam).\nSource: PDF schedule provided by the club.
+END:VEVENT
+BEGIN:VEVENT
+UID:62afd65f-56d1-4be3-bfc6-a8808a372142@vcgeldrop-caspian1
+DTSTAMP:20251022T100432Z
+DTSTART;TZID=Europe/Amsterdam:20260121T213000
+DTEND;TZID=Europe/Amsterdam:20260121T233000
+SUMMARY:[Home] Caspian 1 vs ABC Volleybal 5
+LOCATION:Sporthal Naestenbest\, Pr. Beatrixlaan 27\, Best
+DESCRIPTION:Match: Caspian 1 vs ABC Volleybal 5\nRole: Home\nReferee: PBF Volleybal 2\nLeague: VC Geldrop Men Recreational – Pool 5 (2025/2026)\nNote: Times are local (Europe/Amsterdam).\nSource: PDF schedule provided by the club.
+END:VEVENT
+BEGIN:VEVENT
+UID:a2af4ca3-9d4a-4c23-9a46-cbf5778a0064@vcgeldrop-caspian1
+DTSTAMP:20251022T100432Z
+DTSTART;TZID=Europe/Amsterdam:20260129T210000
+DTEND;TZID=Europe/Amsterdam:20260129T230000
+SUMMARY:[Away] ABC Volleybal 6 vs Caspian 1
+LOCATION:Frits Philips Sporthal\, Avignonlaan 1\, Eindhoven
+DESCRIPTION:Match: ABC Volleybal 6 vs Caspian 1\nRole: Away\nReferee: Alborz 1\nLeague: VC Geldrop Men Recreational – Pool 5 (2025/2026)\nNote: Times are local (Europe/Amsterdam).\nSource: PDF schedule provided by the club.
+END:VEVENT
+BEGIN:VEVENT
+UID:0768ebff-a427-4578-8ebc-3a61ece021e4@vcgeldrop-caspian1
+DTSTAMP:20251022T100432Z
+DTSTART;TZID=Europe/Amsterdam:20260204T213000
+DTEND;TZID=Europe/Amsterdam:20260204T233000
+SUMMARY:[Home] Caspian 1 vs PBF Volleybal 2
+LOCATION:Sporthal Naestenbest\, Pr. Beatrixlaan 27\, Best
+DESCRIPTION:Match: Caspian 1 vs PBF Volleybal 2\nRole: Home\nReferee: ABC Volleybal 6\nLeague: VC Geldrop Men Recreational – Pool 5 (2025/2026)\nNote: Times are local (Europe/Amsterdam).\nSource: PDF schedule provided by the club.
+END:VEVENT
+BEGIN:VEVENT
+UID:1d5838c2-e5a1-4dcc-a4a1-1a4717a9089a@vcgeldrop-caspian1
+DTSTAMP:20251022T100432Z
+DTSTART;TZID=Europe/Amsterdam:20260211T213000
+DTEND;TZID=Europe/Amsterdam:20260211T233000
+SUMMARY:[Away] Simorgh 1 vs Caspian 1
+LOCATION:Sporthal Naestenbest\, Pr. Beatrixlaan 27\, Best
+DESCRIPTION:Match: Simorgh 1 vs Caspian 1\nRole: Away\nReferee: ABC Volleybal 5\nLeague: VC Geldrop Men Recreational – Pool 5 (2025/2026)\nNote: Times are local (Europe/Amsterdam).\nSource: PDF schedule provided by the club.
+END:VEVENT
+BEGIN:VEVENT
+UID:c736a538-52dd-46b6-bdfa-f47bbc7b48b0@vcgeldrop-caspian1
+DTSTAMP:20251022T100432Z
+DTSTART;TZID=Europe/Amsterdam:20260226T210000
+DTEND;TZID=Europe/Amsterdam:20260226T230000
+SUMMARY:[Referee] ABC Volleybal 5 vs PBF Volleybal 2
+LOCATION:Frits Philips Sporthal\, Avignonlaan 1\, Eindhoven
+DESCRIPTION:Match: ABC Volleybal 5 vs PBF Volleybal 2\nRole: Referee\nReferee: Caspian 1\nLeague: VC Geldrop Men Recreational – Pool 5 (2025/2026)\nNote: Times are local (Europe/Amsterdam).\nSource: PDF schedule provided by the club.
+END:VEVENT
+BEGIN:VEVENT
+UID:cacdef5f-ba7a-4289-b0af-2a8300f3de40@vcgeldrop-caspian1
+DTSTAMP:20251022T100432Z
+DTSTART;TZID=Europe/Amsterdam:20260305T210000
+DTEND;TZID=Europe/Amsterdam:20260305T230000
+SUMMARY:[Referee] ABC Volleybal 5 vs Simorgh 1
+LOCATION:Frits Philips Sporthal\, Avignonlaan 1\, Eindhoven
+DESCRIPTION:Match: ABC Volleybal 5 vs Simorgh 1\nRole: Referee\nReferee: Caspian 1\nLeague: VC Geldrop Men Recreational – Pool 5 (2025/2026)\nNote: Times are local (Europe/Amsterdam).\nSource: PDF schedule provided by the club.
+END:VEVENT
+END:VCALENDAR

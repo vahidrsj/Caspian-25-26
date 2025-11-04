@@ -1,0 +1,101 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Subscribe to Tractor Fixtures</title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<style>
+  :root{--bg:#0f172a;--card:#111827;--text:#e5e7eb;--muted:#9ca3af;--accent:#22c55e;--accent2:#3b82f6;}
+  *{box-sizing:border-box} body{margin:0; font-family:system-ui,-apple-system,Segoe UI,Roboto,Ubuntu,Inter,sans-serif; background:linear-gradient(135deg,#0b1020,#111827);}
+  .wrap{max-width:820px;margin:0 auto;padding:32px}
+  .card{background:rgba(17,24,39,.7); border:1px solid rgba(255,255,255,.06); backdrop-filter:blur(6px); color:var(--text); border-radius:18px; padding:28px; box-shadow:0 10px 30px rgba(0,0,0,.35)}
+  h1{margin:0 0 6px; font-size:28px; letter-spacing:.2px}
+  p{color:var(--muted); line-height:1.6}
+  code, .mono{font-family:ui-monospace,SFMono-Regular,Menlo,Monaco,Consolas,monospace}
+  .row{display:flex; gap:12px; flex-wrap:wrap; margin:20px 0 10px}
+  .btn{appearance:none; cursor:pointer; border:0; border-radius:12px; padding:14px 18px; font-weight:600; color:white; display:inline-flex; align-items:center; gap:10px; text-decoration:none}
+  .btn-sub{background:var(--accent)}
+  .btn-gcal{background:var(--accent2)}
+  .btn-copy{background:#64748b}
+  .small{font-size:13px; color:#cbd5e1}
+  .box{background:rgba(255,255,255,.04); border:1px dashed rgba(255,255,255,.16); border-radius:12px; padding:14px}
+  .grid{display:grid; grid-template-columns:1fr; gap:12px}
+  @media (min-width:680px){ .grid{grid-template-columns:1fr 1fr} }
+</style>
+</head>
+<body>
+  <div class="wrap">
+    <div class="card">
+      <h1>Subscribe to Caspian Fixtures (2025–26)</h1>
+      <p>Live iCalendar feed for match schedule of team Caspian in the VC Geldrop 2025–2026 league.</p>
+
+      <div class="grid">
+        <div class="box">
+          <div class="small">HTTPS (direct):</div>
+          <div class="mono" id="httpsUrl">https://vahidrsj.github.io/Caspian-25-26/Caspian1_VCGeldrop_Poule5_2025-26.ics</div>
+        </div>
+        <div class="box">
+          <div class="small">WEBCAL (one-click for iOS/macOS/Outlook):</div>
+          <div class="mono" id="webcalUrl">webcal://vahidrsj.github.io/Caspian-25-26/Caspian1_VCGeldrop_Poule5_2025-26.ics</div>
+        </div>
+      </div>
+
+      <div class="row" style="margin-top:18px">
+        <!-- One-click for Apple/Outlook/etc via webcal -->
+        <a class="btn btn-sub" id="btnWebcal" href="#">
+          ➕ Subscribe (Apple / Outlook)
+        </a>
+
+        <!-- Google Calendar: open Add-by-URL + copy URL to clipboard -->
+        <button class="btn btn-gcal" id="btnGCal">
+          🗓️ Add in Google Calendar
+        </button>
+
+        <!-- Copy link -->
+        <button class="btn btn-copy" id="btnCopy">
+          📋 Copy feed URL
+        </button>
+      </div>
+
+      <p class="small">Note: Google Calendar doesn’t support one-click subscription links for feeds. This button opens the “Add by URL” page and copies the feed URL. Just paste (<span class="mono">Ctrl/⌘+V</span>) and press <em>Add calendar</em>.</p>
+
+      <hr style="border:0;border-top:1px solid rgba(255,255,255,.12); margin:20px 0">
+
+      <p class="small">
+        Make sure the <span class="mono">Caspian1_VCGeldrop_Poule5_2025-26.ics</span> file is updated in this repository.
+        All subscribers will receive updates automatically. If you rename the file or path, update the URLs above.
+      </p>
+    </div>
+  </div>
+
+<script>
+  // ---- CONFIG: set your GitHub vahidrsj and optional repo/path here ----
+  const vahidrsj = "vahidrsj";                 // ← change me
+  const PATH = "/Caspian-25-26/Caspian1_VCGeldrop_Poule5_2025-26.ics"; // ← change if your path/name differs
+
+  const httpsUrl = `https://${vahidrsj}.github.io${PATH}`;
+  const webcalUrl = `webcal://${vahidrsj}.github.io${PATH}`;
+
+  document.getElementById('httpsUrl').textContent = httpsUrl;
+  document.getElementById('webcalUrl').textContent = webcalUrl;
+
+  const btnWebcal = document.getElementById('btnWebcal');
+  btnWebcal.href = webcalUrl;
+
+  document.getElementById('btnCopy').addEventListener('click', async () => {
+    try {
+      await navigator.clipboard.writeText(httpsUrl);
+      alert("Feed URL copied to clipboard:\n" + httpsUrl + "\n\nNow paste it into your calendar app.");
+    } catch (e) {
+      prompt("Copy the feed URL manually:", httpsUrl);
+    }
+  });
+
+  document.getElementById('btnGCal').addEventListener('click', async () => {
+    try { await navigator.clipboard.writeText(httpsUrl); } catch(e){}
+    // Open Google Calendar "Add by URL" page in a new tab
+    window.open("https://calendar.google.com/calendar/u/0/r/settings/addbyurl", "_blank");
+  });
+</script>
+</body>
+</html>
