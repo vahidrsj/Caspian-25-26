@@ -5,111 +5,49 @@
 <title>Subscribe to Caspian Fixtures</title>
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <style>
-  :root{--bg:#0f172a;--card:#111827;--text:#e5e7eb;--muted:#9ca3af;--accent:#22c55e;--accent2:#3b82f6;}
-  *{box-sizing:border-box} body{margin:0; font-family:system-ui,-apple-system,Segoe UI,Roboto,Ubuntu,Inter,sans-serif; background:linear-gradient(135deg,#0b1020,#111827);} 
-  .wrap{max-width:880px;margin:0 auto;padding:32px}
-  .card{background:rgba(17,24,39,.72); border:1px solid rgba(255,255,255,.08); backdrop-filter:blur(6px); color:var(--text); border-radius:18px; padding:28px; box-shadow:0 10px 30px rgba(0,0,0,.35)}
-  h1{margin:0 0 6px; font-size:28px; letter-spacing:.2px}
-  p{color:var(--muted); line-height:1.6}
-  code, .mono{font-family:ui-monospace,SFMono-Regular,Menlo,Monaco,Consolas,monospace}
-  .row{display:flex; gap:12px; flex-wrap:wrap; margin:20px 0 10px}
-  .btn{appearance:none; cursor:pointer; border:0; border-radius:12px; padding:14px 18px; font-weight:600; color:white; display:inline-flex; align-items:center; gap:10px; text-decoration:none}
+  :root{--bg:#0f172a;--card:#111827;--text:#e5e7eb;--muted:#94a3b8;--accent:#22c55e;--accent2:#3b82f6}
+  *{box-sizing:border-box}
+  body{margin:0; font-family:system-ui,-apple-system,Segoe UI,Roboto,Ubuntu,Inter,sans-serif; background:linear-gradient(135deg,#0b1020,#111827); color:var(--text)}
+  .wrap{max-width:720px;margin:0 auto;padding:36px}
+  .card{background:rgba(17,24,39,.72); border:1px solid rgba(255,255,255,.08); backdrop-filter:blur(6px); border-radius:18px; padding:28px; box-shadow:0 10px 30px rgba(0,0,0,.35); text-align:center}
+  h1{margin:0 0 4px; font-size:26px}
+  p{margin:6px 0 22px; color:var(--muted)}
+  .row{display:flex; gap:12px; flex-wrap:wrap; justify-content:center}
+  .btn{appearance:none; cursor:pointer; border:0; border-radius:12px; padding:14px 18px; font-weight:700; color:white; text-decoration:none; display:inline-flex; align-items:center; gap:10px}
   .btn-sub{background:var(--accent)}
   .btn-gcal{background:var(--accent2)}
-  .btn-copy{background:#64748b}
-  .small{font-size:13px; color:#cbd5e1}
-  .box{background:rgba(255,255,255,.04); border:1px dashed rgba(255,255,255,.16); border-radius:12px; padding:14px}
-  .grid{display:grid; grid-template-columns:1fr; gap:12px}
-  @media (min-width:680px){ .grid{grid-template-columns:1fr 1fr} }
 </style>
 </head>
 <body>
   <div class="wrap">
     <div class="card">
-      <h1>Subscribe to Caspian Fixtures (2025–26)</h1>
-      <p>Live iCalendar feed for <strong>Caspian</strong> in VC Geldrop 2025–26. Share this page with friends to subscribe.</p>
-
-      <div class="grid">
-        <div class="box">
-          <div class="small">HTTPS (direct):</div>
-          <div class="mono" id="httpsPages"></div>
-        </div>
-        <div class="box">
-          <div class="small">WEBCAL (one‑click for iOS/macOS/Outlook):</div>
-          <div class="mono" id="webcalPages"></div>
-        </div>
-        <div class="box">
-          <div class="small">RAW (GitHub raw, stable for Google):</div>
-          <div class="mono" id="httpsRaw"></div>
-        </div>
-        <div class="box">
-          <div class="small">CDN (jsDelivr, optional):</div>
-          <div class="mono" id="httpsCdn"></div>
-        </div>
+      <h1>Caspian Fixtures (2025–26)</h1>
+      <p>Tap a button to subscribe.</p>
+      <div class="row">
+        <!-- Apple / macOS / Outlook: one‑click via webcal -->
+        <a class="btn btn-sub" id="btnWebcal" href="#">➕ Subscribe (Apple / Outlook)</a>
+        <!-- Google Calendar: add dialog with cid=RAW URL -->
+        <a class="btn btn-gcal" id="btnGCal" href="#" target="_blank" rel="noopener">🗓️ Add in Google Calendar</a>
       </div>
-
-      <div class="row" style="margin-top:18px">
-        <a class="btn btn-sub" id="btnWebcal" href="#">
-          ➕ Subscribe (Apple / Outlook)
-        </a>
-        <a class="btn btn-gcal" id="btnGCal" href="#" target="_blank" rel="noopener">
-          🗓️ Add in Google Calendar
-        </a>
-        <button class="btn btn-copy" id="btnCopy">
-          📋 Copy feed URL
-        </button>
-      </div>
-
-      <p class="small">Tip: Google Calendar can be picky about hosts. If the Pages link doesn’t add, this button uses the <em>RAW</em> file URL with <code>cid=</code>, which Google accepts reliably.</p>
-
-      <hr style="border:0;border-top:1px solid rgba(255,255,255,.12); margin:20px 0">
-      <details>
-        <summary class="small">Troubleshooting</summary>
-        <ul class="small">
-          <li>Open the URL in an incognito tab. It must show plain text starting with <code>BEGIN:VCALENDAR</code>.</li>
-          <li>Keep the repo <strong>public</strong>. File name here: <code>Caspian1_VCGeldrop_Poule5_2025-26.ics</code>.</li>
-          <li>When you update the file, keep the same path to auto‑update all subscribers.</li>
-        </ul>
-      </details>
     </div>
   </div>
 
 <script>
-  // ==== CONFIG (your actual repo/paths) ====
-  const USERNAME = "vahidrsj"; 
-  const REPO = "Caspian-25-26";
-  const FILE = "Caspian1_VCGeldrop_Poule5_2025-26.ics"; // exact filename
-  const PAGES_PATH = `/${REPO}/${FILE}`; // served by GitHub Pages
+  // === CONFIG ===
+  const USERNAME = "vahidrsj";                  // GitHub username
+  const REPO = "Caspian-25-26";                 // repo name
+  const FILE = "Caspian1_VCGeldrop_Poule5_2025-26.ics"; // exact .ics filename
 
-  // Pages (good for webcal on Apple/Outlook)
-  const httpsPages = `https://${USERNAME}.github.io${PAGES_PATH}`;
-  const webcalPages = `webcal://${USERNAME}.github.io${PAGES_PATH}`;
+  // Webcal (best for Apple/macOS/Outlook)
+  const pagesPath = `/${REPO}/${FILE}`;
+  const webcalUrl = `webcal://${USERNAME}.github.io${pagesPath}`;
 
-  // RAW (best for Google Calendar add-by-URL)
-  const httpsRaw = `https://raw.githubusercontent.com/${USERNAME}/${REPO}/main/${FILE}`;
+  // Google Calendar prefers RAW (plain text)
+  const rawUrl = `https://raw.githubusercontent.com/${USERNAME}/${REPO}/main/${FILE}`;
+  const gcalUrl = `https://calendar.google.com/calendar/u/0/r?cid=${encodeURIComponent(rawUrl)}`;
 
-  // jsDelivr CDN (optional alternate)
-  const httpsCdn = `https://cdn.jsdelivr.net/gh/${USERNAME}/${REPO}@main/${FILE}`;
-
-  // Fill text blocks
-  document.getElementById('httpsPages').textContent = httpsPages;
-  document.getElementById('webcalPages').textContent = webcalPages;
-  document.getElementById('httpsRaw').textContent = httpsRaw;
-  document.getElementById('httpsCdn').textContent = httpsCdn;
-
-  // Wire buttons
-  document.getElementById('btnWebcal').href = webcalPages; // Apple/Outlook one‑click
-  const gcalAddUrl = "https://calendar.google.com/calendar/u/0/r?cid=" + encodeURIComponent(httpsRaw);
-  document.getElementById('btnGCal').href = gcalAddUrl;
-
-  document.getElementById('btnCopy').addEventListener('click', async () => {
-    try {
-      await navigator.clipboard.writeText(httpsPages);
-      alert("Feed URL copied to clipboard:\n" + httpsPages + "\n\nUse webcal for Apple/Outlook, RAW for Google.");
-    } catch (e) {
-      prompt("Copy the feed URL manually:", httpsPages);
-    }
-  });
+  document.getElementById('btnWebcal').href = webcalUrl;
+  document.getElementById('btnGCal').href = gcalUrl;
 </script>
 </body>
 </html>
