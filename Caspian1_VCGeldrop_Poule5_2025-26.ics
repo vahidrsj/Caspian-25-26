@@ -71,8 +71,8 @@ END:VEVENT
 BEGIN:VEVENT
 UID:271250f5-71e1-471d-bbf3-8e71f2930d4d@vcgeldrop-caspian1
 DTSTAMP:20251022T100432Z
-DTSTART;TZID=Europe/Amsterdam:20260107T213000
-DTEND;TZID=Europe/Amsterdam:20260107T233000
+DTSTART;TZID=Europe/Amsterdam:20260114T213000
+DTEND;TZID=Europe/Amsterdam:20260114T233000
 SUMMARY:[Away] Alborz 1 vs Caspian 1
 LOCATION:Sporthal Naestenbest\, Pr. Beatrixlaan 27\, Best
 DESCRIPTION:Match: Alborz 1 vs Caspian 1\nRole: Away\nReferee: ABC Volleybal 5\nLeague: VC Geldrop Men Recreational – Pool 5 (2025/2026)\nNote: Times are local (Europe/Amsterdam).\nSource: PDF schedule provided by the club.
@@ -83,7 +83,7 @@ DTSTAMP:20251022T100432Z
 DTSTART;TZID=Europe/Amsterdam:20260121T213000
 DTEND;TZID=Europe/Amsterdam:20260121T233000
 SUMMARY:[Home] Caspian 1 vs ABC Volleybal 5
-LOCATION:Sporthal Naestenbest\, Pr. Beatrixlaan 27\, Best
+LOCATION:De Pracht 3\, 5583 CW Waalre\, Netherlands
 DESCRIPTION:Match: Caspian 1 vs ABC Volleybal 5\nRole: Home\nReferee: PBF Volleybal 2\nLeague: VC Geldrop Men Recreational – Pool 5 (2025/2026)\nNote: Times are local (Europe/Amsterdam).\nSource: PDF schedule provided by the club.
 END:VEVENT
 BEGIN:VEVENT
